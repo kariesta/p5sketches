@@ -11,7 +11,7 @@ function SketchFrame(props) {
         nextId = 0;
         console.log(drawing);
     } else {
-        drawing = drawings.find((drawing) => drawing.id === id);
+        drawing = drawings[parseInt(id)];
         nextId = 1 + parseInt(id);
         console.log(drawing);
     }

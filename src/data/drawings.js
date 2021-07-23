@@ -4,6 +4,7 @@ import fan from './fan.js';
 import heart from './heart.js';
 import breathe from './breathe.js';
 import pyramid from './pyramid.js';
+import techdiff from './techdiff.js';
 
 
 const drawings = [
@@ -36,6 +37,11 @@ const drawings = [
         id: '5',
         description: 'pyramide',
         sketch: pyramid
+    },
+    {
+        id: '6',
+        description: 'tekniske problemer',
+        sketch: techdiff
     }
 ];
 

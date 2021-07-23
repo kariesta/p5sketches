@@ -9,7 +9,7 @@ function ArtPage() {
     if (id === undefined || id < 1 || id >= drawings.length) {
         drawing = drawings[0];
     } else {
-        drawing = drawings.find((drawing) => drawing.id === id);
+        drawing = drawings[parseInt(id)];
     }
 
     return <div>
