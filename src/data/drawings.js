@@ -7,6 +7,7 @@ import pyramid from './pyramid.js';
 import techdiff from './techdiff.js';
 import splat from './splat.js';
 import spins from './spins.js';
+import colorSqrs from "./colorSqrs";
 
 
 const drawings = [
@@ -54,6 +55,11 @@ const drawings = [
         id: '8',
         description: 'spinny boi',
         sketch: spins
+    },
+    {
+        id: '9',
+        description: 'fargeruter',
+        sketch: colorSqrs
     }
 ];
 
