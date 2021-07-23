@@ -20,7 +20,7 @@ export default function colorSqrs(){
         //regn ut coordinater, width,height
         corners = findCorners(numX,numY,wWidth-10,wHeight-10);
         corners = corners.map (x => [x[0]+10,x[1]+10]);
-        blocked = corners.map( false);
+        blocked = corners.map( x => false);
         widthSpace = corners[1][0]-corners[0][0];
         heightSpace = corners[numX][1]-corners[0][1];
     };

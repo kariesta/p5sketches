@@ -8,6 +8,7 @@ import techdiff from './techdiff.js';
 import splat from './splat.js';
 import spins from './spins.js';
 import colorSqrs from "./colorSqrs";
+import sortyBoy from "./sortyBoy";
 
 
 const drawings = [
@@ -60,6 +61,11 @@ const drawings = [
         id: '9',
         description: 'fargeruter',
         sketch: colorSqrs
+    },
+    {
+        id: '10',
+        description: 'Insert sortering',
+        sketch: sortyBoy
     }
 ];
 
