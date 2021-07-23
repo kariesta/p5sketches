@@ -1,8 +1,6 @@
 import React from 'react';
 import drawings from './data/drawings.js';
 import { useParams } from 'react-router';
-import { Link } from "react-router-dom";
-
 
 function SketchFrame(props) {
     let { id }  = useParams();
@@ -22,7 +20,7 @@ function SketchFrame(props) {
     }
     console.log(drawing);
     return <div>
-        <Link to={"/"+(nextId)}><h2>Next</h2></Link>
+        <a href={"/"+(nextId)}><h2>Next</h2></a>
         {props.children}
         <p>{drawing.description}</p>
     </div>;
