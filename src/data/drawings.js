@@ -5,6 +5,7 @@ import heart from './heart.js';
 import breathe from './breathe.js';
 import pyramid from './pyramid.js';
 import techdiff from './techdiff.js';
+import splat from './splat.js';
 
 
 const drawings = [
@@ -42,6 +43,11 @@ const drawings = [
         id: '6',
         description: 'tekniske problemer',
         sketch: techdiff
+    },
+    {
+        id: '6',
+        description: 'splat',
+        sketch: splat
     }
 ];
 
