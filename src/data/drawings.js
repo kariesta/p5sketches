@@ -6,6 +6,7 @@ import breathe from './breathe.js';
 import pyramid from './pyramid.js';
 import techdiff from './techdiff.js';
 import splat from './splat.js';
+import spins from './spins.js';
 
 
 const drawings = [
@@ -45,9 +46,14 @@ const drawings = [
         sketch: techdiff
     },
     {
-        id: '6',
+        id: '7',
         description: 'splat',
         sketch: splat
+    },
+    {
+        id: '8',
+        description: 'spinny boi',
+        sketch: spins
     }
 ];
 
