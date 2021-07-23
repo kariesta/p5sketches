@@ -59,15 +59,6 @@ export default function simple(){
 
     const backing = (p5) => {
         p5.background(135, 206, 235);
-        p5.noStroke();
-        p5.fill(255);
-        p5.stroke(10);
-        p5.strokeWeight(10);
-        p5.point(wWidth*2/4,wHeight/2);
-        p5.strokeWeight(1);
-        p5.line(wWidth/2,0,wWidth/2,wHeight);
-        p5.line(0,wHeight/2,wWidth,wHeight/2);
-        p5.stroke(150,50,50);
     };
 
     const rotatePoints = (p5,pointarray,rotated) => {

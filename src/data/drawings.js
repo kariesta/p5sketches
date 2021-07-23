@@ -2,6 +2,7 @@ import simple from './simple.js';
 import rays from './rays.js';
 import fan from './fan.js';
 import heart from './heart.js';
+import breathe from './breathe.js';
 
 
 const drawings = [
@@ -24,6 +25,11 @@ const drawings = [
         id: '3',
         description: 'hjerte',
         sketch: heart
+    },
+    {
+        id: '4',
+        description: 'pust',
+        sketch: breathe
     }
 ];
 
