@@ -3,6 +3,7 @@ import rays from './rays.js';
 import fan from './fan.js';
 import heart from './heart.js';
 import breathe from './breathe.js';
+import pyramid from './pyramid.js';
 
 
 const drawings = [
@@ -30,6 +31,11 @@ const drawings = [
         id: '4',
         description: 'pust',
         sketch: breathe
+    },
+    {
+        id: '5',
+        description: 'pyramide',
+        sketch: pyramid
     }
 ];
 
