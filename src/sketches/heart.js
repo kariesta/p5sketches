@@ -16,15 +16,8 @@ export default function simple(){
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.DEGREES); // Change the mode to DEGREES
         //frameRate(1);
-        for (let x = 0; x<wWidth;x++){
-            for(let y = 0; y<wHeight;y++){
-                let m = Math.pow(x-(wWidth/2),2)/Math.pow(w/2,2);
-                let n = Math.pow(y-(wHeight/2),2)/Math.pow(h/2,2);
-                if(m+n === 1){
-                    points.push([x,y]);
-                }
-            }
-        }
+        generatePoints();
+
         heartLeft = offset(rotatePoints(p5, points,45,0),14,0);
         heartLeft = heartLeft.slice(25,40).concat(heartLeft.slice(0,9));
         heartRight = offset(rotatePoints(p5, points,135,0),-14,0);
@@ -77,7 +70,6 @@ export default function simple(){
             rotatedPoints.push([xc-nyx,yc-nyy]);
             rotatedBottomPoints.push([xc+nyx,yc+nyy]);
         });
-
         return rotatedPoints.concat(rotatedBottomPoints);
     };
 
@@ -93,6 +85,19 @@ export default function simple(){
         } else {
             triCount = 1;
             tris = [];
+        }
+    };
+
+    //alt for treigt, regn ut fra sentrum & vinkler.
+    const generatePoints = () => {
+        for (let x = 0; x<wWidth;x++){
+            for(let y = 0; y<wHeight;y++){
+                let m = Math.pow(x-(wWidth/2),2)/Math.pow(w/2,2);
+                let n = Math.pow(y-(wHeight/2),2)/Math.pow(h/2,2);
+                if(m+n === 1){
+                    points.push([x,y]);
+                }
+            }
         }
     };
 

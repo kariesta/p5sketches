@@ -1,5 +1,5 @@
 import React from 'react';
-import drawings from './data/drawings.js';
+import drawings from './drawings.js';
 import { useParams } from 'react-router';
 
 function SketchFrame(props) {
@@ -8,7 +8,7 @@ function SketchFrame(props) {
     let nextId = 0;
     if (id === undefined || id < 0 || id >= drawings.length) {
         drawing = drawings[0];
-        nextId = 0;
+        nextId = 1;
         console.log(drawing);
     } else {
         drawing = drawings[parseInt(id)];
@@ -19,10 +19,12 @@ function SketchFrame(props) {
         nextId = 0;
     }
     console.log(drawing);
-    return <div>
+    return <div className={"SketchFrame"}>
         <a href={"/"+(nextId)}><h2>Next</h2></a>
         {props.children}
-        <p>{drawing.description}</p>
+        <div className={"descriptionCard"}>
+            <p>{drawing.description}</p>
+        </div>
     </div>;
 }
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function splat(){
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
     let splat = [];
 
 
@@ -24,7 +25,7 @@ export default function splat(){
             let numX = p5.randomGaussian(0,1);
             let numY = p5.randomGaussian(0,1);   //20 gaussian spread numbers
             let meanX = p5.mouseX;
-            let meanY = p5.mouseY;//not actually needed in this code atm, but fancy
+            let meanY = p5.mouseY;//not actually needed in this code atm, but for future ideas
             let standardDeviation = 50;
             let x = standardDeviation * numX + meanX;
             let y = standardDeviation * numY + meanY;

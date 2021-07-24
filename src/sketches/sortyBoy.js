@@ -1,9 +1,10 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function splat(){
-    const wWidth = 400, wHeight = 400;
-    let sortButton, shuffleBottton, toSortIndex = 0, lastSortedIndex, toShuffleIndex = 0;
+    const [wWidth,wHeight] = calulateDimentions(window);
+    let sortButton, shuffleBottton, toSortIndex = 0, toShuffleIndex = 0;
     let numOfStones = 12, circleRadius = 100, stoneRadius = 20;
     let isSorting = false, isShuffled = false;
     let stonePositions = [],stoneColors = [];
@@ -23,10 +24,9 @@ export default function splat(){
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.DEGREES);
-        p5.frameRate(1);
+        p5.frameRate(4);
         p5.colorMode(p5.HSB, wHeight, wHeight, wHeight);
         initArrays(p5);
-        lastSortedIndex = stonePositions[0];
 
         //sort knapp
         sortButton = p5.createButton('insertion sort');

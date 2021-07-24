@@ -1,10 +1,12 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function simple(){
     let moves = 0;
+    const [wWidth,wHeight] = calulateDimentions(window);
+
     const setup = (p5, canvasParentRef) => {
-        const { innerWidth: wWidth, innerHeight: wHeight } = window;
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef)
     };
 

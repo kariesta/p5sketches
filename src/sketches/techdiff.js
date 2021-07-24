@@ -1,8 +1,9 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function simple(){
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
     let points = [];
     let rotation = 5;
     let ellipseaddon = 80;

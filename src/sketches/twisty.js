@@ -1,8 +1,9 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils.js";
 
-export default function spirograph(){
-    const wWidth = 400, wHeight = 400;
+export default function twisty(){
+    const [wWidth,wHeight] = calulateDimentions(window);
     let dots = [], lines = [];
     let dotR = 20, circleR = 100, numOfDots = 12;
     let lastDot,startDot,endDot,dotDiff,locked, animate;
@@ -37,8 +38,8 @@ export default function spirograph(){
         p5.textSize(12);
         p5.text("dots",10, 65);
         p5.text("radius",10, 95);
-        inputD.position(60, 65);
-        inputC.position(60, 95);
+        inputD.position(100, 115);
+        inputC.position(100, 145);
     };
 
     const draw = p5 => {

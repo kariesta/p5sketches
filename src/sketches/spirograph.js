@@ -1,8 +1,9 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function spirograph(){
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
     let degree = 0;
     let points = [];
     const bigRad = 150;
@@ -16,7 +17,7 @@ export default function spirograph(){
     };
 
     //Ta noen kule farger da vell
-    // tegn ringer
+    // TODO tegn ringer
     // liten ring beveger seg inni stor ring, omkretsen av liten ring og stor ring skal forholde seg likt.
     const draw = p5 => {
         p5.background(135, 206, 235);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router';
-import drawings from './data/drawings.js'
+import drawings from './drawings.js'
 import SketchFrame from './SketchFrame';
 
 function ArtPage() {
@@ -12,7 +12,7 @@ function ArtPage() {
         drawing = drawings[parseInt(id)];
     }
 
-    return <div>
+    return <div className={"ArtPage"}>
         {"Drawing number " + id + " is a " + drawing.description}
         <SketchFrame>
             {drawing.sketch()}

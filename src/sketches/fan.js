@@ -1,9 +1,10 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function simple(){
     let rotation = 5;
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
 
 
     const setup = (p5, canvasParentRef) => {
@@ -21,15 +22,16 @@ export default function simple(){
         let h = 100;
         for (let i = 0; i<360;i+=5){
             let length = Math.sqrt(Math.pow(w*p5.sin(i),2)+Math.pow(h*p5.cos(i),2));
-            let lastCord = 0;
+            let lastCord = (wHeight/2);
+            let distance = (length*p5.sin(i+rotation));
             if(i<90){
-                lastCord = (wHeight/2)+(length*p5.sin(i+rotation));
+                lastCord += distance;
             } else if(i<180){
-                lastCord = (wHeight/2)-(length*p5.sin(i+rotation));
+                lastCord -= distance;
             } else if(i<270){
-                lastCord = (wHeight/2)+(length*p5.sin(i+rotation));
+                lastCord += distance;
             } else {
-                lastCord = (wHeight/2)-(length*p5.sin(i+rotation));
+                lastCord -= distance;
             }
             p5.line((wWidth/2),(wHeight/2),(wWidth/2)+((length*p5.cos(i+rotation))),lastCord);
         }

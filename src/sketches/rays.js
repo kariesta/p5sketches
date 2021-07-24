@@ -1,5 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 /*function rays(){
     let lim;
@@ -46,7 +47,7 @@ function rays() {
     let lim;
     let innerheight;
     let innerwidth;
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
     //const { innerWidth: wWidth, innerHeight: wHeight } = window;
 
     const setup = (p5, canvasParentRef) => {

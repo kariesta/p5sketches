@@ -3,6 +3,7 @@ import Sketch from "react-p5";
 
 export default function splat(){
     const wWidth = 400, wHeight = 400;
+    const transparency = 200;
     let points = [];
     let rotation = 5;
     let w = 200;
@@ -28,12 +29,12 @@ export default function splat(){
     const draw = p5 => {
         backing(p5);
         p5.strokeWeight(5);
-        p5.stroke(200,100,100);
+        p5.stroke(200,100,100,transparency);
         let spin = rotatePoints(p5,points,rotation);
         spin.forEach((p) => {
             p5.point(p[0],p[1]);
         });
-        p5.stroke(250,100,100);
+        p5.stroke(250,100,100,transparency);
         let spinoff = rotatePoints(p5,points,-rotation);
 
         spinoff.forEach((p) => {
@@ -47,13 +48,13 @@ export default function splat(){
         p5.background(135, 206, 235);
         p5.noStroke();
         p5.fill(255);
-        p5.stroke(10);
+        p5.stroke(240,110,110,transparency);
         p5.strokeWeight(10);
         p5.point(wWidth*2/4,wHeight/2);  //point(width*3/4,height/4);
         p5.strokeWeight(1);
         p5.line(wWidth/2,0,wWidth/2,wHeight);
         p5.line(0,wHeight/2,wWidth,wHeight/2);
-        p5.stroke(150,50,50);
+        p5.stroke(150,50,50,transparency);
     };
 
     const rotatePoints = (p5, pointarray,rotated) => {

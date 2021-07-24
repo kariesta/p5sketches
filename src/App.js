@@ -3,7 +3,8 @@ import {
   BrowserRouter,
   Route,
 } from "react-router-dom";
-import ArtPage from './ArtPage';
+import ArtPage from './ArtPages/ArtPage';
+import'./App.css';
 
 
 function App() {

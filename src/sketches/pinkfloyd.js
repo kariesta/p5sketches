@@ -1,8 +1,9 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {calulateDimentions} from "../utils";
 
 export default function colorSqrs(){
-    const wWidth = 400, wHeight = 400;
+    const [wWidth,wHeight] = calulateDimentions(window);
     let midtX = 0;
     let midtY = 0;
     let colors = [];
@@ -30,8 +31,9 @@ export default function colorSqrs(){
         p5.strokeWeight(5);
         p5.line(p5.mouseX,p5.mouseY,midtX,midtY);
         lightTriangel(p5);
-        p5.noStroke();
-        p5.fill(255,255,255,230);
+        p5.strokeWeight(3);
+        p5.stroke(255,255,255);
+        p5.fill(0);
         p5.triangle(midtX,midtY*4/5,wWidth/3,midtY*2,wWidth*2/3,midtY*2);
     };
 

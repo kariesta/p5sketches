@@ -1,18 +1,18 @@
-import simple from './simple.js';
-import rays from './rays.js';
-import fan from './fan.js';
-import heart from './heart.js';
-import breathe from './breathe.js';
-import pyramid from './pyramid.js';
-import techdiff from './techdiff.js';
-import splat from './splat.js';
-import spins from './spins.js';
-import colorSqrs from "./colorSqrs";
-import sortyBoy from "./sortyBoy";
-import pinkfloyd from "./pinkfloyd";
-import spirograph from "./spirograph";
-import sunny from "./sunny";
-import twisty from "./twisty";
+import simple from '../sketches/simple.js';
+import rays from '../sketches/rays.js';
+import fan from '../sketches/fan.js';
+import heart from '../sketches/heart.js';
+import breathe from '../sketches/breathe.js';
+import pyramid from '../sketches/pyramid.js';
+import techdiff from '../sketches/techdiff.js';
+import splat from '../sketches/splat.js';
+import spins from '../sketches/spins.js';
+import colorSqrs from "../sketches/colorSqrs";
+import sortyBoy from "../sketches/sortyBoy";
+import pinkfloyd from "../sketches/pinkfloyd";
+import spirograph from "../sketches/spirograph";
+import sunny from "../sketches/sunny";
+import twisty from "../sketches/twisty";
 
 let id = 0;
 const getId = () => {
@@ -99,4 +99,7 @@ const drawings = [
     }
 ];
 
+//TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
+//TODO transparante mønstre, et beveger seg horisontalt, ett diagonalt.
+//TODO
 export default drawings;
