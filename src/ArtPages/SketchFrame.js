@@ -20,7 +20,7 @@ function SketchFrame(props) {
     }
     console.log(drawing);
     return <div className={"SketchFrame"}>
-        <a href={"#/"+(nextId)}><h2>Next</h2></a>
+        <a href={"./"+(nextId)}><h2>Next</h2></a>
         {drawing.sketch()}
         <div className={"descriptionCard"}>
             <p>{drawing.description}</p>

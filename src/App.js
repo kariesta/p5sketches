@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  HashRouter,
+  BrowserRouter,
   Route,
 } from "react-router-dom";
 import ArtPage from './ArtPages/ArtPage';
@@ -9,14 +9,14 @@ import'./App.css';
 
 function App() {
 
-  return <HashRouter>
+  return <BrowserRouter basename={process.env.PUBLIC_URL}>
     <Route exact path='/:id'>
       <ArtPage/>
     </Route>
     <Route exact path='/'>
       <ArtPage/>
     </Route>
-  </HashRouter>;
+  </BrowserRouter>;
 }
 
 export default App;
