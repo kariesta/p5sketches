@@ -1,6 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router';
-import drawings from './drawings.js'
 import SketchFrame from './SketchFrame';
 
 function ArtPage() {

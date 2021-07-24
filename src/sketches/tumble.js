@@ -5,7 +5,6 @@ export default function simple(){
     const wWidth = 400, wHeight = 400;
     let moves = 30;
     let stubs = [0,39,54,123,129,290,300,40];
-    let colors = [];
     let cFrom, cTo;
 
     const setup = (p5, canvasParentRef) => {
