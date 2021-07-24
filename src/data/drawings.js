@@ -10,68 +10,92 @@ import spins from './spins.js';
 import colorSqrs from "./colorSqrs";
 import sortyBoy from "./sortyBoy";
 import pinkfloyd from "./pinkfloyd";
+import spirograph from "./spirograph";
+import sunny from "./sunny";
+import twisty from "./twisty";
 
+let id = 0;
+const getId = () => {
+    let nowId = id.toString();
+    id++;
+    return nowId;
+};
 
 const drawings = [
     {
-        id: '0',
+        id: getId(),
         description: 'en enkel animasjon',
         sketch: simple
     },
     {
-        id: '1',
+        id: getId(),
         description: 'Sol i svart-hvit',
         sketch: rays
     },
     {
-        id: '2',
+        id: getId(),
         description: 'vifte',
         sketch: fan
     },
     {
-        id: '3',
+        id: getId(),
         description: 'hjerte',
         sketch: heart
     },
     {
-        id: '4',
+        id: getId(),
         description: 'pust',
         sketch: breathe
     },
     {
-        id: '5',
+        id: getId(),
         description: 'pyramide',
         sketch: pyramid
     },
     {
-        id: '6',
+        id: getId(),
         description: 'tekniske problemer',
         sketch: techdiff
     },
     {
-        id: '7',
+        id: getId(),
         description: 'splat',
         sketch: splat
     },
     {
-        id: '8',
+        id: getId(),
         description: 'spinny boi',
         sketch: spins
     },
     {
-        id: '9',
+        id: getId(),
         description: 'fargeruter',
         sketch: colorSqrs
     },
     {
-        id: '10',
+        id: getId(),
         description: 'Insert sortering',
         sketch: sortyBoy
     },
     {
-        id: '11',
+        id: getId(),
         description: 'pinkfloyd - the dark side of the moon',
         sketch: pinkfloyd
+    },
+    {
+        id: getId(),
+        description: 'spirograph',
+        sketch: spirograph
+    },
+    {
+        id: getId(),
+        description: 'sol og strand',
+        sketch: sunny
+    },
+    {
+        id: getId(),
+        description: 'string-art',
+        sketch: twisty
     }
 ];
 
