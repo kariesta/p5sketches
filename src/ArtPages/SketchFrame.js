@@ -2,7 +2,7 @@ import React from 'react';
 import drawings from './drawings.js';
 import { useParams } from 'react-router';
 
-function SketchFrame(props) {
+function SketchFrame() {
     let { id }  = useParams();
     let drawing = {description: " "};
     let nextId = 0;
