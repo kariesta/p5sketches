@@ -13,6 +13,8 @@ import pinkfloyd from "../sketches/pinkfloyd";
 import spirograph from "../sketches/spirograph";
 import sunny from "../sketches/sunny";
 import twisty from "../sketches/twisty";
+import moenster from "../sketches/moenster";
+import tumble from "../sketches/tumble";
 
 let id = 0;
 const getId = () => {
@@ -96,10 +98,20 @@ const drawings = [
         id: getId(),
         description: 'string-art',
         sketch: twisty
+    },
+    {
+        id: getId(),
+        description: 'mønstermonster',
+        sketch: moenster
+    },
+    {
+        id: getId(),
+        description: 'tumbleweed',
+        sketch: tumble
     }
 ];
 
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
-//TODO transparante mønstre, et beveger seg horisontalt, ett diagonalt.
-//TODO
+//TODO glitchy text
+//TODO sinuswave from ball demo.
 export default drawings;

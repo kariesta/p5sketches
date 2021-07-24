@@ -8,7 +8,7 @@ export default function pyramid(){
     const padding = 40;
     let lineCount = 9; //linenumber
     let sideLength = 280;
-    let bColor,triangleColor;
+    let bColor = 250 ,triangleColor = 0;
     //let topp;let left;let right;
 
     const setup = (p5, canvasParentRef) => {
@@ -18,6 +18,7 @@ export default function pyramid(){
     };
 
     const draw = p5 => {
+        console.log(bColor);
         p5.background(bColor);
 
         p5.strokeWeight(1);

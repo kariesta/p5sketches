@@ -7,7 +7,6 @@ export default function splat(){
     let sortButton, shuffleBottton, toSortIndex = 0, toShuffleIndex = 0;
     let numOfStones = 12, circleRadius = 100, stoneRadius = 20;
     let isSorting = false, isShuffled = false;
-    let stonePositions = [],stoneColors = [];
     class StonePosition {
         constructor(x, y) {
             this.x = x;
@@ -20,6 +19,7 @@ export default function splat(){
             this.color = c;
         }
     }
+    let stonePositions = [new StonePosition(0,0)],stoneColors = [new StoneColor(0,0)];
 
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
@@ -44,7 +44,8 @@ export default function splat(){
         p5.noStroke();
         p5.fill(255);
 
-        for (let i = 0; i<numOfStones; i++){
+
+        for (let i = 0; i<stoneColors.length; i++){
             let pos = stonePositions[i];
             let col = stoneColors[i];
             p5.fill(col.color);
@@ -60,6 +61,8 @@ export default function splat(){
     };
 
     const initArrays = (p5) => {
+        stoneColors = [];
+        stonePositions = [];
         for (let i = 0; i<numOfStones; i++){
             stoneColors.push(new StoneColor(i, p5.color(i*(360/numOfStones),wHeight,wHeight)));
             let x = (wWidth/2)+p5.cos((i/numOfStones)*360)*circleRadius;

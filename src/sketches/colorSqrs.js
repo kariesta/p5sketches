@@ -3,9 +3,9 @@ import Sketch from "react-p5";
 
 export default function colorSqrs(){
     const wWidth = 400, wHeight = 400;
-    let corners;
-    let widthSpace;
-    let heightSpace;
+    let corners = [[0,0]];
+    let widthSpace = 0;
+    let heightSpace = 0;
     let numX = 13;
     let numY = 13;
     let blocked = [];
@@ -29,17 +29,19 @@ export default function colorSqrs(){
         p5.background(255);
         p5.noStroke();
         p5.fill(255);
-        for(let x = 0; x<numX; x++){
-            for(let y = 0; y<numY; y++){
-                //avgjør farge
-                if (blocked[(x*numX)+y]){
-                    p5.fill(255);
-                } else {
-                    p5.fill(x*255/numX,y*255/numY,p5.cos(((x*numX)+y)/corners.length)*255);
-                }
+        if (corners.length>= numX) {
+            for(let x = 0; x<numX; x++){
+                for(let y = 0; y<numY; y++){
+                    //avgjør farge
+                    if (blocked[(x*numX)+y]){
+                        p5.fill(255);
+                    } else {
+                        p5.fill(x*255/numX,y*255/numY,p5.cos(((x*numX)+y)/corners.length)*255);
+                    }
 
-                //tegn rute.
-                p5.rect(corners[(x*numX)+y][0],corners[(x*numX)+y][1],widthSpace-10,heightSpace-10);
+                    //tegn rute.
+                    p5.rect(corners[(x*numX)+y][0],corners[(x*numX)+y][1],widthSpace-10,heightSpace-10);
+                }
             }
         }
     };

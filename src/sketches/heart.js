@@ -8,8 +8,8 @@ export default function simple(){
     let rotation = 5;
     let w = 200;
     let h = 100;
-    let heartLeft;
-    let heartRight;
+    let heartLeft = [[0,0]*12];
+    let heartRight = [[0,0]*12];
     let triCount = 2;
 
     const setup = (p5, canvasParentRef) => {
