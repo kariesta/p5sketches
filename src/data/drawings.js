@@ -9,6 +9,7 @@ import splat from './splat.js';
 import spins from './spins.js';
 import colorSqrs from "./colorSqrs";
 import sortyBoy from "./sortyBoy";
+import pinkfloyd from "./pinkfloyd";
 
 
 const drawings = [
@@ -66,6 +67,11 @@ const drawings = [
         id: '10',
         description: 'Insert sortering',
         sketch: sortyBoy
+    },
+    {
+        id: '11',
+        description: 'pinkfloyd - the dark side of the moon',
+        sketch: pinkfloyd
     }
 ];
 
