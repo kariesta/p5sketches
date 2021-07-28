@@ -1,7 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 
-export default function splat(){
+export default function spins(){
     const wWidth = 400, wHeight = 400;
     const transparency = 200;
     let points = [];
@@ -10,10 +10,11 @@ export default function splat(){
     let h = 100;
 
 
-    const setup = (p5, canvasParentRef) => {
+    const setups = (p5, canvasParentRef) => {
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.DEGREES); // Change the mode to DEGREES
         //frameRate(1);
+
         for (let x = 0; x<wWidth;x++){
             for(let y = 0; y<wHeight;y++){
                 let m = Math.pow(x-(wWidth/2),2)/Math.pow(w/2,2);
@@ -24,6 +25,10 @@ export default function splat(){
                 }
             }
         }
+        //console.log("start window " + canvasParentRef);
+        //console.log("start window " + p5.canvas.parentElement.toString());
+        //console.log("   -> " + p5.canvas.width + ",,," + p5.canvas.height);
+        //console.log("start spins "+points.length);
     };
 
     const draw = p5 => {
@@ -34,6 +39,7 @@ export default function splat(){
         spin.forEach((p) => {
             p5.point(p[0],p[1]);
         });
+        //console.log("spinnys "+spin.length);
         p5.stroke(250,100,100,transparency);
         let spinoff = rotatePoints(p5,points,-rotation);
 
@@ -75,5 +81,7 @@ export default function splat(){
         return rotatedPoints.concat(rotatedBottomPoints);
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <SpinsSketch className={"sketchy"} setup={setups} draw={draw} />;
 }
+
+class SpinsSketch extends Sketch {}

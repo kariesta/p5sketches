@@ -2,7 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "../utils";
 
-export default function simple(){
+export default function moenster(){
     let moves = 0;
     const triangleSides = 50, triangleHeight = triangleSides*0.866;
 
@@ -76,6 +76,7 @@ export default function simple(){
 
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <MoensterSketch setup={setup} draw={draw} />;
 }
 
+class MoensterSketch extends Sketch {}

@@ -18,7 +18,6 @@ export default function pyramid(){
     };
 
     const draw = p5 => {
-        console.log(bColor);
         p5.background(bColor);
 
         p5.strokeWeight(1);
@@ -50,5 +49,7 @@ export default function pyramid(){
         }
     };
 
-    return <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
+    return <PyramidSketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
 }
+
+class PyramidSketch extends Sketch {}

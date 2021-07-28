@@ -1,7 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 
-export default function simple(){
+export default function heart(){
     const wWidth = 400, wHeight = 400;
     let points = [];
     let tris = [];
@@ -101,8 +101,10 @@ export default function simple(){
         }
     };
 
-    return <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
+    return <HeartSketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
 }
+
+class HeartSketch extends Sketch {}
 
 
 

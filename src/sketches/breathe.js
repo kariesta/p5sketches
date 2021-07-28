@@ -52,5 +52,7 @@ export default function breathe(){
         p5.line(0,wHeight/2,wWidth,wHeight/2);
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <BreatheSketch setup={setup} draw={draw} />;
 }
+
+class BreatheSketch extends Sketch {}

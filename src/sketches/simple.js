@@ -18,6 +18,8 @@ export default function simple(){
         moves++;
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <SimpleSketch setup={setup} draw={draw} />;
 }
+
+class SimpleSketch extends Sketch {}
 

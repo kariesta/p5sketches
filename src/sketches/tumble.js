@@ -1,7 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 
-export default function simple(){
+export default function tumble(){
     const wWidth = 400, wHeight = 400;
     let moves = 30;
     let stubs = [0,39,54,123,129,290,300,40];
@@ -63,8 +63,7 @@ export default function simple(){
         )
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <TumbleSketch setup={setup} draw={draw} />;
 }
 
-
-
+class TumbleSketch extends Sketch {}

@@ -2,10 +2,10 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "../utils";
 
-export default function splat(){
+export default function sortyBoy(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let sortButton, shuffleBottton, toSortIndex = 0, toShuffleIndex = 0;
-    let numOfStones = 12, circleRadius = 100, stoneRadius = 20;
+    let numOfStones = 12, circleRadius = wWidth*0.3, stoneRadius = 20;
     let isSorting = false, isShuffled = false;
     class StonePosition {
         constructor(x, y) {
@@ -92,18 +92,20 @@ export default function splat(){
     };
 
     const sortStones = () => {
-        console.log("insertion sort");
+        //console.log("insertion sort");
         isSorting = true;
         isShuffled = false;
         toSortIndex = 0;
     };
 
     const shuffleStones = () => {
-        console.log("shuffle");
+        //console.log("shuffle");
         isShuffled = true;
         isSorting = false;
         toShuffleIndex = 0;
     };
 
-  return <Sketch setup={setup} draw={draw} />;
+  return <SortyBoySketch setup={setup} draw={draw} />;
 }
+
+class SortyBoySketch extends Sketch {}

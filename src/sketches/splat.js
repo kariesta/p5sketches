@@ -8,7 +8,8 @@ export default function splat(){
 
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef)
+        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
+        p5.angleMode(p5.DEGREES);
     };
 
     const draw = p5 => {
@@ -33,5 +34,7 @@ export default function splat(){
         }
     };
 
-    return <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
+    return <SplatSketch  className={"sketchy2"}  setup={setup} draw={draw} mousePressed={mousePressed}/>;
 }
+
+class SplatSketch extends Sketch {}

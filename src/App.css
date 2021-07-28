@@ -17,6 +17,8 @@ html {
 
 .SketchFrame{
   padding: 1rem;
+  display: grid;
+  justify-content: center;
 }
 
 .descriptionCard{
@@ -27,4 +29,15 @@ html {
   width: 18%;
   color: darkslategray;
   box-shadow: 10px 10px 1px #12181f;
+}
+
+.SketchNav{
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.SketchWall{
+  width: 85%;
 }

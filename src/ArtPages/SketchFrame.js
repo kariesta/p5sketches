@@ -1,31 +1,29 @@
-import React from 'react';
-import drawings from './drawings.js';
-import { useParams } from 'react-router';
+import React, { useState } from 'react';
 
-function SketchFrame() {
-    let { id }  = useParams();
-    let drawing = {description: " "};
-    let nextId = 0;
-    if (id === undefined || id < 0 || id >= drawings.length) {
-        drawing = drawings[0];
-        nextId = 1;
-        console.log(drawing);
-    } else {
-        drawing = drawings[parseInt(id)];
-        nextId = 1 + parseInt(id);
-        console.log(drawing);
-    }
-    if (nextId === drawings.length){
-        nextId = 0;
-    }
-    console.log(drawing);
+//create your forceUpdate hook
+function useForceUpdate(){
+    const [value, setValue] = useState(0); // integer state
+    console.log("forced");
+    return () => setValue(value => value + 1); // update the state to force render
+}
+
+function SketchFrame(props) {
+    const forceUpdate = useForceUpdate();
+    console.log(props.prevId);
     return <div className={"SketchFrame"}>
-        <a href={"./"+(nextId)}><h2>Next</h2></a>
-        {drawing.sketch()}
-        <div className={"descriptionCard"}>
-            <p>{drawing.description}</p>
+        <div className={"SketchNav"}>
+            <a href={".#/"+(props.prevId)}><h2>Prev</h2></a>
+            <a href={".#/"+(props.nextId)}><h2>Next</h2></a>
+        </div>
+        <div className={"SketchWall"}>
+            {props.children}
+            <div className={"descriptionCard"}>
+                <p>{props.description}</p>
+            </div>
         </div>
     </div>;
 }
+/*        <a href={".#/"+(props.nextId)} onClick={forceUpdate}><h2>Next</h2></a>
+*/
 
 export default SketchFrame;

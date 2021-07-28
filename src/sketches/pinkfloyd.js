@@ -2,7 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "../utils";
 
-export default function colorSqrs(){
+export default function pinkfloyd(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let midtX = 0;
     let midtY = 0;
@@ -53,5 +53,7 @@ export default function colorSqrs(){
         }
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <PinkfloydSketch setup={setup} draw={draw} />;
 }
+
+class PinkfloydSketch extends Sketch {}

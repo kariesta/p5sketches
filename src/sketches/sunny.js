@@ -2,7 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions, frame} from "../utils";
 
-export default function spirograph(){
+export default function sunny(){
     const [wWidth,wHeight] = calulateDimentions(window);
     const paddingToFrame = 30;
     let mouseWeight = 0.06; //lineart
@@ -20,7 +20,14 @@ export default function spirograph(){
         waveColors = [p5.color(0,250,270),p5.color(0,225,245),p5.color(0,240,260)];
     };
 
+    const notInitialiced = () => {
+        return backgroundColor === undefined &&
+            frameColor === undefined &&
+            waveColors === undefined
+    };
+
     const draw = p5 => {
+        if (notInitialiced()) return;
         p5.background(backgroundColor);
         p5.noStroke();
         p5.fill(252,232,190);
@@ -28,8 +35,13 @@ export default function spirograph(){
         p5.noFill();
         p5.strokeWeight(20);
         let xOff = 0, yOff = 0;
-        p5.noFill();
 
+        /*
+        let waveOffset = [[30,0],[12,15],[-6,30]];
+        for (let i = 0; i< waveColors.length;i++){
+            wave(p5,waveColors[i],xOff+waveOffset[i]+(mouseWeightY*(p5.mouseX-toCenter)),yOff+waveOffset[i]+(mouseWeightY*(p5.mouseY-toCenter)),40);
+        }
+        */
         wave(p5,waveColors[0],xOff+30+(mouseWeightY*(p5.mouseX-toCenter)),yOff+(mouseWeightY*(p5.mouseY-toCenter)),40);
         wave(p5,waveColors[1],xOff+12+(mouseWeightY*(p5.mouseX-toCenter)),yOff+15+(mouseWeightY*(p5.mouseY-toCenter)),40);
         wave(p5,waveColors[2],xOff-6+(mouseWeightY*(p5.mouseX-toCenter)),yOff+30+(mouseWeightY*(p5.mouseY-toCenter)),40);
@@ -65,5 +77,7 @@ export default function spirograph(){
         wave(p5,color,xOff-13+mX,yOff+39+mY,40);
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <SunnySketch setup={setup} draw={draw} />;
 }
+
+class SunnySketch extends Sketch {}

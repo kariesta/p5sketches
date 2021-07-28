@@ -42,7 +42,13 @@ export default function twisty(){
         inputC.position(100, 145);
     };
 
+    const notInitialiced = () => {
+        return lastDot === undefined && startDot === undefined && endDot === undefined && dotDiff === undefined &&
+            locked === undefined && animate === undefined && inputD === undefined && inputC === undefined
+    };
+
     const draw = p5 => {
+        if (notInitialiced()) return;
         if (inputD.value() !== numOfDots || inputC.value() !== circleR){
             numOfDots = inputD.value();
             circleR = inputC.value();
@@ -68,7 +74,7 @@ export default function twisty(){
         }
         if (animate){
             let nextDot = (endDot+dotDiff)%numOfDots;
-            console.log("yo"+nextDot+",start:"+startDot+",end:"+endDot);
+            ////console.log("yo"+nextDot+",start:"+startDot+",end:"+endDot);
             lines.push(new Line(endDot,dots[endDot].x,dots[endDot].y,dots[nextDot].x,dots[nextDot].y));
             endDot = (endDot+1)%numOfDots;
             if (startDot === endDot){
@@ -91,7 +97,7 @@ export default function twisty(){
             endDot = lastDot;
             animate = true;
             dotDiff = Math.abs((startDot-endDot));//(endDot-startDot)%12;
-            console.log(endDot+","+startDot+","+dotDiff);
+            //console.log(endDot+","+startDot+","+dotDiff);
         }
     };
 
@@ -123,5 +129,7 @@ export default function twisty(){
         }
     };
 
-    return <Sketch setup={setup} draw={draw} mousePressed={mousePressed} mouseReleased={mouseReleased} />;
+    return <TwistySketch setup={setup} draw={draw} mousePressed={mousePressed} mouseReleased={mouseReleased} />;
 }
+
+class TwistySketch extends Sketch {}

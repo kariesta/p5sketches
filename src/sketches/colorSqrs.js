@@ -76,5 +76,7 @@ export default function colorSqrs(){
         return corns;
     };
 
-    return <Sketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
+    return <ColorSketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
 }
+
+class ColorSketch extends Sketch {}

@@ -2,7 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "../utils";
 
-export default function simple(){
+export default function techdiff(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let points = [];
     let rotation = 5;
@@ -85,5 +85,7 @@ export default function simple(){
         p5.stroke(150,50,50);
     }
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <TechdiffSketch setup={setup} draw={draw} />;
 }
+
+class TechdiffSketch extends Sketch {}

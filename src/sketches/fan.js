@@ -42,5 +42,7 @@ export default function simple(){
         rotation += 0.2;
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <FanSketch setup={setup} draw={draw} />;
 }
+
+class FanSketch extends Sketch {}

@@ -41,7 +41,7 @@ import {calulateDimentions} from "../utils";
     return <Sketch setup={setup} draw={draw}/>;
 }*/
 
-function rays() {
+export default function rays() {
     let maxLim = 200;
 
     let lim;
@@ -102,7 +102,7 @@ function rays() {
         }
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <RaysSketch setup={setup} draw={draw} />;
 }
 
-export default rays;
+class RaysSketch extends Sketch {}

@@ -50,5 +50,7 @@ export default function spirograph(){
         return [radius*p5.sin(degree),radius*p5.cos(degree)];
     };
 
-    return <Sketch setup={setup} draw={draw} />;
+    return <SpirographSketch setup={setup} draw={draw} />;
 }
+
+class SpirographSketch extends Sketch {}
