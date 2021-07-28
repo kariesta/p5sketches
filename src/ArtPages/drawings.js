@@ -114,4 +114,5 @@ const drawings = [
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
 //TODO glitchy text
 //TODO sinuswave from ball demo.
+//TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
 export default drawings;

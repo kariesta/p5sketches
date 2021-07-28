@@ -1,6 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 
+//TODO når weedet er utav skjermen generers en nytumbleweed
 export default function tumble(){
     const wWidth = 400, wHeight = 400;
     let moves = 30;
