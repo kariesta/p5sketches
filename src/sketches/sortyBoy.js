@@ -4,6 +4,8 @@ import {calulateDimentions} from "../utils";
 
 export default function sortyBoy(){
     const [wWidth,wHeight] = calulateDimentions(window);
+    const positionStyle = 'fixed';
+    //it can be static, fixed, relative, sticky, initial or inherit
     let sortButton, shuffleBottton, toSortIndex = 0, toShuffleIndex = 0;
     let numOfStones = 12, circleRadius = wWidth*0.3, stoneRadius = 20;
     let isSorting = false, isShuffled = false;
@@ -27,15 +29,16 @@ export default function sortyBoy(){
         p5.frameRate(4);
         p5.colorMode(p5.HSB, wHeight, wHeight, wHeight);
         initArrays(p5);
+        const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
 
         //sort knapp
         sortButton = p5.createButton('insertion sort');
-        sortButton.position(130, 125);
+        sortButton.position(buttonBaseX+30, buttonBaseY+55, positionStyle);
         sortButton.mousePressed(sortStones);
 
         //shuffleknapp
         shuffleBottton = p5.createButton('shuffle');
-        shuffleBottton.position(230, 125);
+        shuffleBottton.position(buttonBaseX+130, buttonBaseY+55, positionStyle);
         shuffleBottton.mousePressed(shuffleStones);
     };
 

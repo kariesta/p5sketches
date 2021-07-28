@@ -29,6 +29,7 @@ export default function twisty(){
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.DEGREES); // Change the mode to DEGREES
         resetDots(p5);
+
         inputD = p5.createInput();
         inputC = p5.createInput();
         inputD.value(numOfDots);
@@ -38,8 +39,10 @@ export default function twisty(){
         p5.textSize(12);
         p5.text("dots",10, 65);
         p5.text("radius",10, 95);
-        inputD.position(100, 115);
-        inputC.position(100, 145);
+
+        const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
+        inputD.position(buttonBaseX+80, buttonBaseY+65);
+        inputC.position(buttonBaseX+80, buttonBaseY+95);
     };
 
     const notInitialiced = () => {
