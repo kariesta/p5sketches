@@ -1,14 +1,6 @@
-import React, { useState } from 'react';
-
-//create your forceUpdate hook
-function useForceUpdate(){
-    const [value, setValue] = useState(0); // integer state
-    console.log("forced");
-    return () => setValue(value => value + 1); // update the state to force render
-}
+import React from 'react';
 
 function SketchFrame(props) {
-    const forceUpdate = useForceUpdate();
     console.log(props.prevId);
     return <div className={"SketchFrame"}>
         <div className={"SketchNav"}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import SketchFrame from './SketchFrame';
 import drawings from './drawings.js';
 import { useParams } from 'react-router';
