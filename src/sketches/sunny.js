@@ -1,6 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions, frame} from "../utils";
+import {calulateDimentions, frame} from "./utils";
 
 export default function sunny(){
     const [wWidth,wHeight] = calulateDimentions(window);

@@ -1,5 +1,6 @@
 import React from 'react';
 
+//TODO use link instead?
 function SketchFrame(props) {
     console.log(props.prevId);
     return <div className={"SketchFrame"}>

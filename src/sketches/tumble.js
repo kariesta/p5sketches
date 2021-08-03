@@ -1,12 +1,13 @@
 import React from 'react';
 import Sketch from "react-p5";
 
-//TODO når weedet er utav skjermen generers en nytumbleweed
+//TODO noise for smoothe kanter
 export default function tumble(){
     const wWidth = 400, wHeight = 400;
     let moves = 30;
     let stubs = [0,39,54,123,129,290,300,40];
     let cFrom, cTo;
+    let randomStart=119;
 
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
@@ -30,11 +31,14 @@ export default function tumble(){
         //0,0 er senter for rotasjon og forflytting
         tumbleWeed(p5);
 
-        moves=(moves+1)%wWidth;
+        moves=(moves+1)%(wWidth+30);
     };
 
     const tumbleWeed = (p5) => {
-        p5.randomSeed(119);
+        if(moves===0){
+            randomStart++;
+        }
+        p5.randomSeed(randomStart);
         //tegn tumbpleweedet her
         p5.stroke(215,200,160);
         p5.fill(250,240,230);
@@ -44,24 +48,25 @@ export default function tumble(){
     };
 
     const weed = (p5,scale) => {
-        if(p5.random(0,1)!==0){
+        if(p5.random(0,1)>0.5){
             let c = p5.lerpColor(cFrom,cTo,p5.random(0,1));
             p5.stroke(c);
-        } else {
-            p5.noStroke();
-        }
-        if(p5.random(0,1)!==0){
-            let c = p5.lerpColor(cFrom,cTo,p5.random(0,1));
-            p5.fill(c);
-        } else {
             p5.noFill();
+        } else {
+            let c = p5.lerpColor(cFrom,cTo,p5.random(0,1));
+            p5.noStroke();
+            p5.fill(c);
         }
-        p5.quad(
-            p5.random(-40, 0)*scale, p5.random(-40, 10)*scale,
-            p5.random(-60, 10)*scale, p5.random(-40, 10)*scale,
-            p5.random(-40, 50)*scale, p5.random(0,60)*scale,
-            p5.random(-40, 50)*scale, p5.random(0,60)*scale
-        )
+
+        p5.beginShape();
+        p5.vertex(p5.random(-40, 0)*scale, p5.random(-40, 0)*scale,);
+        p5.vertex(p5.random(-40, 5)*scale, p5.random(40,60)*scale);
+        p5.vertex(p5.random(50, 10)*scale, p5.random(40,60)*scale);
+        p5.vertex(p5.random(60, 10)*scale, p5.random(-40, 0)*scale);
+        p5.vertex(p5.random(50, 40)*scale, p5.random(-40, 0)*scale);
+        p5.vertex(p5.random(60, 10)*scale, p5.random(-20, 0)*scale);
+        p5.vertex(p5.random(60, 10)*scale, p5.random(-5, 0)*scale);
+        p5.endShape(p5.CLOSE);
     };
 
     return <TumbleSketch setup={setup} draw={draw} />;

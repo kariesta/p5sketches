@@ -1,5 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
+import {pointInFrame} from "./utils";
 
 export default function heart(){
     const wWidth = 400, wHeight = 400;
@@ -40,9 +41,13 @@ export default function heart(){
 
         //draw triangles
         p5.noStroke();
+        let colours = [p5.color(250,100,100),p5.color(200,100,100)];
+        p5.fill(colours[0]);
         if (tris.length>0){
-            tris.forEach((poinatos) => {
-                p5.fill(250,100,100);
+            tris.forEach((poinatos,index) => {
+                if (index%3 === 0){
+                    p5.fill(colours[index%2])
+                }
                 p5.triangle(poinatos[0][0],poinatos[0][1],poinatos[1][0],poinatos[1][1],poinatos[2][0],poinatos[2][1]);
             });
         }
@@ -77,7 +82,10 @@ export default function heart(){
         return pointarray.map(x => [x[0]+xOff,x[1]+yOff]);
     };
 
-    const mousePressed = () => {
+    const mousePressed = (p5) => {
+        if(!pointInFrame(wWidth,wHeight,0,p5.mouseX,p5.mouseY)){
+           return
+        }
         //add triangle
         if (triCount<heartRight.length-1){
             tris.push([heartRight[0],heartRight[heartRight.length-1],heartRight[triCount++]]);

@@ -1,6 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions} from "../utils";
+import {calulateDimentions} from "./utils";
 
 export default function simple(){
     let rotation = 5;

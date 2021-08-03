@@ -1,13 +1,13 @@
 import simple from '../sketches/simple.js';
-import rays from '../sketches/rays.js';
-import fan from '../sketches/fan.js';
+//import rays from '../sketches/rays.js';
+//import fan from '../sketches/fan.js';
 import heart from '../sketches/heart.js';
 import breathe from '../sketches/breathe.js';
 import pyramid from '../sketches/pyramid.js';
 import techdiff from '../sketches/techdiff.js';
 import splat from '../sketches/splat.js';
-import spins from '../sketches/spins.js';
-import colorSqrs from "../sketches/colorSqrs";
+//import spins from '../sketches/spins.js';
+//import colorSqrs from "../sketches/colorSqrs";
 import sortyBoy from "../sketches/sortyBoy";
 import pinkfloyd from "../sketches/pinkfloyd";
 import spirograph from "../sketches/spirograph";
@@ -15,6 +15,9 @@ import sunny from "../sketches/sunny";
 import twisty from "../sketches/twisty";
 import moenster from "../sketches/moenster";
 import tumble from "../sketches/tumble";
+import glitchy from "../sketches/glitchy";
+import threadEllipse from "../sketches/threadEllipse";
+import sinuswave from "../sketches/sinuswave";
 
 let id = 0;
 const getId = () => {
@@ -23,13 +26,14 @@ const getId = () => {
     return nowId;
 };
 
+//TODO lag et filter med tags, interaktivt, inputfelt, enkelt, album, noise/random
 const drawings = [
     {
         id: getId(),
         description: 'en enkel animasjon',
         sketch: simple
     },
-    {
+    /*{
         id: getId(),
         description: 'Sol i svart-hvit',
         sketch: rays
@@ -38,7 +42,7 @@ const drawings = [
         id: getId(),
         description: 'vifte',
         sketch: fan
-    },
+    },*/
     {
         id: getId(),
         description: 'hjerte',
@@ -64,7 +68,7 @@ const drawings = [
         description: 'splat',
         sketch: splat
     },
-    {
+    /*{
         id: getId(),
         description: 'spinny boi',
         sketch: spins
@@ -73,7 +77,7 @@ const drawings = [
         id: getId(),
         description: 'fargeruter',
         sketch: colorSqrs
-    },
+    },*/
     {
         id: getId(),
         description: 'Insert sortering',
@@ -81,7 +85,7 @@ const drawings = [
     },
     {
         id: getId(),
-        description: 'pinkfloyd - the dark side of the moon',
+        description: 'Pinkfloyd - the dark side of the moon',
         sketch: pinkfloyd
     },
     {
@@ -108,11 +112,34 @@ const drawings = [
         id: getId(),
         description: 'tumbleweed',
         sketch: tumble
-    }
+    },
+    {
+        id: getId(),
+        description: 'glitchy',
+        sketch: glitchy
+    },
+    {
+        id: getId(),
+        description: 'thread-figures',
+        sketch: threadEllipse
+    },
+    {
+        id: getId(),
+        description: 'sinus-wave',
+        sketch: sinuswave
+    },
+    /*{
+        id: getId(),
+        description: 'falling',
+        sketch: falling
+    }*/
+    {
+        id: getId(),
+        description: 'TODO: Sigma - find me, but bouncy or moving with colour updates.',
+        sketch: simple
+    },
 ];
 
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
-//TODO glitchy text
-//TODO sinuswave from ball demo.
 //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
 export default drawings;

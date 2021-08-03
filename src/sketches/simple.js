@@ -1,6 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions} from "../utils";
+import {calulateDimentions} from "./utils";
 
 export default function simple(){
     let moves = 0;
@@ -12,10 +12,14 @@ export default function simple(){
 
     const draw = p5 => {
         p5.background(255, 130, 20);
-        p5.fill(255, 130, 20);
+        p5.noStroke();
+        p5.fill(255, 217, 2, 170);
         p5.ellipse(100+moves, 100+moves, 100+moves);
-        p5.ellipse(300, 100, 100);
+        p5.ellipse(300, 120, 100);
         moves++;
+        if(moves>wWidth*1.5){
+            moves = -99;
+        }
     };
 
     return <SimpleSketch setup={setup} draw={draw} />;

@@ -1,7 +1,10 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions} from "../utils";
+import {calulateDimentions} from "./utils";
 
+//TODO replace boxes and checks with
+//circles of variating fill and some strokes
+//moving fan-like
 export default function moenster(){
     let moves = 0;
     const triangleSides = 50, triangleHeight = triangleSides*0.866;
