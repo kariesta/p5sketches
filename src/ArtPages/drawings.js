@@ -1,13 +1,13 @@
 import simple from '../sketches/simple.js';
-//import rays from '../sketches/rays.js';
-//import fan from '../sketches/fan.js';
+import rays from '../sketches/rays.js';
+import fan from '../sketches/fan.js';
 import heart from '../sketches/heart.js';
 import breathe from '../sketches/breathe.js';
 import pyramid from '../sketches/pyramid.js';
 import techdiff from '../sketches/techdiff.js';
 import splat from '../sketches/splat.js';
-//import spins from '../sketches/spins.js';
-//import colorSqrs from "../sketches/colorSqrs";
+import spins from '../sketches/spins.js';
+import colorSqrs from "../sketches/colorSqrs";
 import sortyBoy from "../sketches/sortyBoy";
 import pinkfloyd from "../sketches/pinkfloyd";
 import spirograph from "../sketches/spirograph";
@@ -18,6 +18,9 @@ import tumble from "../sketches/tumble";
 import glitchy from "../sketches/glitchy";
 import threadEllipse from "../sketches/threadEllipse";
 import sinuswave from "../sketches/sinuswave";
+import falling from "../sketches/falling";
+import findMe from "../sketches/findMe";
+import vulfPeck from "../sketches/vulfPeck";
 
 let id = 0;
 const getId = () => {
@@ -33,7 +36,7 @@ const drawings = [
         description: 'en enkel animasjon',
         sketch: simple
     },
-    /*{
+    {
         id: getId(),
         description: 'Sol i svart-hvit',
         sketch: rays
@@ -42,7 +45,7 @@ const drawings = [
         id: getId(),
         description: 'vifte',
         sketch: fan
-    },*/
+    },
     {
         id: getId(),
         description: 'hjerte',
@@ -68,7 +71,7 @@ const drawings = [
         description: 'splat',
         sketch: splat
     },
-    /*{
+    {
         id: getId(),
         description: 'spinny boi',
         sketch: spins
@@ -77,7 +80,7 @@ const drawings = [
         id: getId(),
         description: 'fargeruter',
         sketch: colorSqrs
-    },*/
+    },
     {
         id: getId(),
         description: 'Insert sortering',
@@ -128,16 +131,21 @@ const drawings = [
         description: 'sinus-wave',
         sketch: sinuswave
     },
-    /*{
+    {
         id: getId(),
         description: 'falling',
         sketch: falling
-    }*/
+    },
     {
         id: getId(),
-        description: 'TODO: Sigma - find me, but bouncy or moving with colour updates.',
-        sketch: simple
+        description: 'Sigma - find me, but bouncy or moving with colour updates.',
+        sketch: findMe
     },
+    {
+        id: getId(),
+        description: 'Vulfpeck - thrill of the arts, but more pointy as mouse moves vertically',
+        sketch: vulfPeck
+    }
 ];
 
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
