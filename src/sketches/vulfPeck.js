@@ -15,10 +15,11 @@ export default function vulfPeck(){
         p5.background(255);
         p5.stroke(255, 167, 2, 170);
         let centerH = heights;
+        let mouseDim = 1+(p5.mouseY/wHeight);
         for (let i = 1; i<steps;i++){
             p5.line(yStart,wHeight-heights*i,yMid,wHeight-centerH);
             p5.line(yMid,wHeight-centerH,yEnd,wHeight-heights*i);
-            centerH+=heights*(2-(1/i));
+            centerH+=heights*(2-(1/i)*mouseDim);
         }
     };
 

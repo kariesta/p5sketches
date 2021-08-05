@@ -21,6 +21,9 @@ import sinuswave from "../sketches/sinuswave";
 import falling from "../sketches/falling";
 import findMe from "../sketches/findMe";
 import vulfPeck from "../sketches/vulfPeck";
+import tallyHall from "../sketches/tallyHall";
+import classixx from "../sketches/classixx";
+import tree from "../sketches/tree";
 
 let id = 0;
 const getId = () => {
@@ -143,9 +146,24 @@ const drawings = [
     },
     {
         id: getId(),
+        description: 'Tally hall - turn of the lights, but spinning',
+        sketch: tallyHall
+    },
+    {
+        id: getId(),
+        description: 'A tree',
+        sketch: tree
+    },
+    {
+        id: getId(),
         description: 'Vulfpeck - thrill of the arts, but more pointy as mouse moves vertically',
         sketch: vulfPeck
-    }
+    },
+    {
+        id: getId(),
+        description: 'Classixx - all your waiting for, but arms and legs moving',
+        sketch: classixx
+    },
 ];
 
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
