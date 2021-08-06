@@ -12,7 +12,7 @@ export default function moenster(){
     const [wWidth,wHeight] = calulateDimentions(window);
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef)
+        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.RADIANS);
     };
 

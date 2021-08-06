@@ -60,7 +60,7 @@ export default function jerryFolk(){
         }*/
     };
 
-    const backMoves = (degree) => {
+    /*const backMoves = (degree) => {
         if ((degree%360)>180) {
             return 180-(degree%180)
         } else {
@@ -74,7 +74,7 @@ export default function jerryFolk(){
 
     const yRot = (p5,a) => {
         return (wHeight/2)+(wHeight/2)*p5.cos(moves+a)
-    };
+    };*/
 
     return <JerryFolkSketch setup={setup} draw={draw} />;
 }

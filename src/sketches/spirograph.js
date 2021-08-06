@@ -8,7 +8,7 @@ export default function spirograph(){
     let degree = 0;
     let points = [], spiroP1 = [], spiroP2 = [];
     let legacy = [];
-    let bigRad = 67, tinyRad = 46, shortRad = 20;
+    let bigRad = "67", tinyRad = 46, shortRad = 20;
     let totalRad = bigRad+tinyRad;
     let inputTiny, inputShort;
     let centerV, bigV, smallV,shortV;
@@ -49,10 +49,10 @@ export default function spirograph(){
         inputTiny.position(buttonBaseX+20, buttonBaseY+65);
         inputShort.position(buttonBaseX+20, buttonBaseY+95);
 
+        resetVectors(p5);
         centerV = p5.createVector(wWidth/2,wHeight/2);
         bigV = radiusVector(p5,degree,bigRad);
 
-        resetVectors(p5);
         console.log(" "+smallCirc+", "+bigCirc+", "+smallSpeed);
         console.log(" "+spiroP1+", "+smallV+", ");
         colors = [p5.color(139,157,235,0),p5.color(135,235,152),p5.color(94,164,107)]

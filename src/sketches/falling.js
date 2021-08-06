@@ -9,7 +9,7 @@ export default function falling(){
     let ellipseX, ellipseY;
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef)
+        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         let v1 = p5.createVector(150,300);
         let v2 = p5.createVector(300,400);
         distance = v1.dist(v2);
