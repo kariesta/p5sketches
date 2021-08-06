@@ -2,7 +2,8 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "./utils";
 
-export default function simple(){
+//TODO make colours change across spring
+export default function findMe(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let startColor, endColor, centerV, upperV, lowerV;
     const radius = 300;
@@ -125,8 +126,8 @@ export default function simple(){
         detailMode = (detailMode+1)%3;
     };
 
-    return <SimpleSketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
+    return <FindMeSketch setup={setup} draw={draw} mousePressed={mousePressed}/>;
 }
 
-class SimpleSketch extends Sketch {}
+class FindMeSketch extends Sketch {}
 

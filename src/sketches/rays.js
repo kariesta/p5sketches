@@ -2,6 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "./utils";
 
+//todo dustribute lines closer in corner, or by noise?
 export default function rays() {
     let maxLim = 200;
 

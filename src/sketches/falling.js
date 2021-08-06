@@ -35,7 +35,6 @@ export default function falling(){
             ellipseX += force.x;
             ellipseY += force.y;
         } else {
-            ellipseX = ellipseX;
             ellipseY += 1;
         }
         p5.ellipse(ellipseX, ellipseY, 50);

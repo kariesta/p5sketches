@@ -24,6 +24,8 @@ import vulfPeck from "../sketches/vulfPeck";
 import tallyHall from "../sketches/tallyHall";
 import classixx from "../sketches/classixx";
 import tree from "../sketches/tree";
+import jerryFolk from "../sketches/jerryFolk";
+import wavey from "../sketches/wavey";
 
 let id = 0;
 const getId = () => {
@@ -141,7 +143,7 @@ const drawings = [
     },
     {
         id: getId(),
-        description: 'Sigma - find me, but bouncy or moving with colour updates.',
+        description: 'Sigma - find me, but colour updates.',
         sketch: findMe
     },
     {
@@ -156,7 +158,7 @@ const drawings = [
     },
     {
         id: getId(),
-        description: 'Vulfpeck - thrill of the arts, but more pointy as mouse moves vertically',
+        description: 'Vulfpeck - thrill of the arts, but mouse reactive',
         sketch: vulfPeck
     },
     {
@@ -164,8 +166,50 @@ const drawings = [
         description: 'Classixx - all your waiting for, but arms and legs moving',
         sketch: classixx
     },
+    {
+        id: getId(),
+        description: 'wavey pattern',
+        sketch: wavey
+    },
+    {
+        id: getId(),
+        description: 'TODO: jerry folk - futura, but moving into place',
+        sketch: jerryFolk
+    },
+    {
+        id: getId(),
+        description: 'TODO: a rope, move up and down',
+        sketch: simple
+    },
+    {
+        id: getId(),
+        description: 'TODO: blobs, either rows or floating around',
+        sketch: simple
+    },
+    {
+        id: getId(),
+        description: 'TODO: mytype, but jumping off it',
+        sketch: simple
+    },
+    {
+        id: getId(),
+        description: 'TODO: olaska loop line, but colors translating from orange/blue to pink/green',
+        sketch: simple
+    },
+    {
+        id: getId(),
+        description: 'TODO: honningbarna opp de nye blanke, en prikk om gangen uten bakgrunn så tekst',
+        sketch: simple
+    },
+    {
+        id: getId(),
+        description: 'TODO:',
+        sketch: simple
+    },
 ];
 
+//TODO mimic this: desktop/mønster
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
 //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
+//TODO demonstrate that curved triangles roll as smooth as circles.
 export default drawings;
