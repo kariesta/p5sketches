@@ -168,7 +168,7 @@ const drawings = [
     },
     {
         id: getId(),
-        description: 'wavey pattern',
+        description: 'TODO: wavey pattern',
         sketch: wavey
     },
     {
@@ -176,7 +176,7 @@ const drawings = [
         description: 'TODO: jerry folk - futura, but moving into place',
         sketch: jerryFolk
     },
-    {
+    /*{
         id: getId(),
         description: 'TODO: a rope, move up and down',
         sketch: simple
@@ -205,9 +205,10 @@ const drawings = [
         id: getId(),
         description: 'TODO:',
         sketch: simple
-    },
+    },*/
 ];
 
+//TODO add new favicon
 //TODO mimic this: desktop/mønster
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
 //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
