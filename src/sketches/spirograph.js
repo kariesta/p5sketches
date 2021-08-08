@@ -6,12 +6,14 @@ import {calulateDimentions, drawLine, inputField} from "./utils";
 export default function spirograph(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let degree = 0;
-    let points = [], spiroP1 = [], spiroP2 = [];
+    let points = [], spiroP2 = [];
+    //let  spiroP1 = [],
     let legacy = [];
-    let bigRad = "67", tinyRad = 46, shortRad = 20;
+    let bigRad = 67, tinyRad = 50, shortRad = 45;
     let totalRad = bigRad+tinyRad;
     let inputTiny, inputShort;
-    let centerV, bigV, smallV,shortV;
+    let centerV, bigV,shortV;
+    //let smallV;
     let bigCirc, smallCirc, smallSpeed;
     let colors = [];
 
@@ -21,15 +23,15 @@ export default function spirograph(){
         }
 
         points = [];
-        spiroP1 = [];
+        //spiroP1 = [];
         spiroP2 = [];
 
-        smallV = radiusVector(p5,120,tinyRad);
+        //smallV = radiusVector(p5,120,tinyRad);
         shortV = radiusVector(p5,40,shortRad);
 
         smallCirc = p5.PI*2*tinyRad;
         bigCirc = p5.PI*2*totalRad;
-        totalRad = parseInt(bigRad)+parseInt(tinyRad);
+        totalRad = bigRad+parseInt(tinyRad);
         smallSpeed = bigCirc/smallCirc;
     };
 
@@ -47,8 +49,8 @@ export default function spirograph(){
         centerV = p5.createVector(wWidth/2,wHeight/2);
         bigV = radiusVector(p5,degree,bigRad);
 
-        console.log(" "+smallCirc+", "+bigCirc+", "+smallSpeed);
-        console.log(" "+spiroP1+", "+smallV+", ");
+        //console.log(" "+smallCirc+", "+bigCirc+", "+smallSpeed);
+        //console.log(" "+spiroP1+", "+smallV+", ");
         colors = [p5.color(139,157,235,0),p5.color(135,235,152),p5.color(94,164,107)]
     };
 
@@ -60,7 +62,7 @@ export default function spirograph(){
         }
 
         p5.background(135, 206, 235);
-        degree=(degree+1)%360;
+        degree=(degree+2)%360;
 
         p5.fill(250);
         p5.noStroke();

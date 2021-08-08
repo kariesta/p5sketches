@@ -4,7 +4,7 @@ import {calulateDimentions} from "./utils";
 
 export default function threadEllipse(){
     const [wWidth,wHeight] = calulateDimentions(window);
-    const dist = (wWidth/3)*1.2;
+    //const dist = (wWidth/3)*1.2;
     let c1,c2;
 
 
@@ -12,7 +12,7 @@ export default function threadEllipse(){
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         c1 = p5.createVector(wWidth/3,wHeight/2);
         c2 = p5.createVector(wWidth*2/3,wHeight/2);
-        console.log(dist);
+        //console.log(dist);
     };
 
     const draw = p5 => {
