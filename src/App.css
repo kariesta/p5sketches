@@ -14,6 +14,26 @@ html {
   text-shadow: 2px 0 whitesmoke;
 }
 
+.FilterPage{
+  color: whitesmoke;
+  padding: 1rem;
+  display: grid;
+  justify-content: center;
+}
+.FilterPage a{
+  color: whitesmoke;
+}
+
+.FilterPage a:hover{
+  color: fuchsia;
+  text-shadow: 2px 0 whitesmoke;
+}
+
+.FilteredList{
+  width: 65%;
+  min-width: 170px;
+}
+
 .SketchFrame{
   padding: 1rem;
   display: grid;
@@ -22,9 +42,9 @@ html {
 
 .descriptionCard{
   background: whitesmoke;
-  margin: 0.4rem 0.6rem;
+  margin: 0.4rem 0.6rem 1.6rem;
   padding: 0.8rem;
-  min-width: 140px;
+  min-width: 170px;
   width: 18%;
   color: darkslategray;
   box-shadow: 10px 10px 1px #12181f;

@@ -26,6 +26,8 @@ import classixx from "../sketches/classixx";
 import tree from "../sketches/tree";
 import jerryFolk from "../sketches/jerryFolk";
 import wavey from "../sketches/wavey";
+import water from "../sketches/water";
+import unitCircle from "../sketches/unitCircle";
 
 let id = 0;
 const getId = () => {
@@ -34,147 +36,191 @@ const getId = () => {
     return nowId;
 };
 
+export const categories = [
+    "interaktivt","inputfelt","enkelt","album","noise/random"
+];
+
 //TODO lag et filter med tags, interaktivt, inputfelt, enkelt, album, noise/random
-const drawings = [
+export const drawings = [
     {
         id: getId(),
         description: 'en enkel animasjon',
-        sketch: simple
+        sketch: simple,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'Sol i svart-hvit',
-        sketch: rays
+        sketch: rays,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'vifte',
-        sketch: fan
+        sketch: fan,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'hjerte',
-        sketch: heart
+        sketch: heart,
+        categories: [categories[0], categories[2]]
     },
     {
         id: getId(),
         description: 'pust',
-        sketch: breathe
+        sketch: breathe,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'pyramide',
-        sketch: pyramid
+        sketch: pyramid,
+        categories: [categories[0]]
     },
     {
         id: getId(),
         description: 'tekniske problemer',
-        sketch: techdiff
+        sketch: techdiff,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'splat',
-        sketch: splat
+        sketch: splat,
+        categories: [categories[0], categories[2]]
     },
     {
         id: getId(),
         description: 'spinny boi',
-        sketch: spins
+        sketch: spins,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'fargeruter',
-        sketch: colorSqrs
+        sketch: colorSqrs,
+        categories: [categories[0], categories[2]]
     },
     {
         id: getId(),
         description: 'Insert sortering',
-        sketch: sortyBoy
+        sketch: sortyBoy,
+        categories: [categories[0], categories[1], categories[2]]
     },
     {
         id: getId(),
         description: 'Pinkfloyd - the dark side of the moon',
-        sketch: pinkfloyd
+        sketch: pinkfloyd,
+        categories: [categories[0], categories[2],categories[3]]
     },
     {
         id: getId(),
         description: 'spirograph',
-        sketch: spirograph
+        sketch: spirograph,
+        categories: [categories[0], categories[2]]
     },
     {
         id: getId(),
         description: 'sol og strand',
-        sketch: sunny
+        sketch: sunny,
+        categories: [categories[0], categories[2]]
     },
     {
         id: getId(),
         description: 'string-art',
-        sketch: twisty
+        sketch: twisty,
+        categories: [categories[0], categories[1], categories[2]]
     },
     {
         id: getId(),
         description: 'mønstermonster',
-        sketch: moenster
+        sketch: moenster,
+        categories: [categories[2]]
     },
     {
         id: getId(),
         description: 'tumbleweed',
-        sketch: tumble
+        sketch: tumble,
+        categories: [categories[4]]
     },
     {
         id: getId(),
         description: 'glitchy',
-        sketch: glitchy
+        sketch: glitchy,
+        categories: [ categories[2]]
     },
     {
         id: getId(),
         description: 'thread-figures',
-        sketch: threadEllipse
+        sketch: threadEllipse,
+        categories: [categories[0]]
     },
     {
         id: getId(),
         description: 'sinus-wave',
-        sketch: sinuswave
+        sketch: sinuswave,
+        categories: [categories[0]]
     },
     {
         id: getId(),
         description: 'falling',
-        sketch: falling
+        sketch: falling,
+        categories: [categories[0]]
     },
     {
         id: getId(),
         description: 'Sigma - find me, but colour updates.',
-        sketch: findMe
+        sketch: findMe,
+        categories: [categories[2], categories[3]]
     },
     {
         id: getId(),
         description: 'Tally hall - turn of the lights, but spinning',
-        sketch: tallyHall
+        sketch: tallyHall,
+        categories: [categories[0], categories[3]]
     },
     {
         id: getId(),
         description: 'A tree',
-        sketch: tree
+        sketch: tree,
+        categories: [categories[4]]
     },
     {
         id: getId(),
         description: 'Vulfpeck - thrill of the arts, but mouse reactive',
-        sketch: vulfPeck
+        sketch: vulfPeck,
+        categories: [categories[0], categories[3]]
     },
     {
         id: getId(),
         description: 'Classixx - all your waiting for, but arms and legs moving',
-        sketch: classixx
+        sketch: classixx,
+        categories: [categories[3]]
     },
     {
         id: getId(),
-        description: 'TODO: wavey pattern',
-        sketch: wavey
+        description: 'wavey pattern',
+        sketch: wavey,
+        categories: [categories[0]]
     },
     {
         id: getId(),
         description: 'TODO: jerry folk - futura, but moving into place',
-        sketch: jerryFolk
+        sketch: jerryFolk,
+        categories: [categories[0], categories[3]]
+    },
+    {
+        id: getId(),
+        description: 'TODO: water',
+        sketch: water,
+        categories: [categories[4]]
+    },
+    {
+        id: getId(),
+        description: 'Enhetssirkel',
+        sketch: unitCircle,
+        categories: [categories[0]]
     },
     /*{
         id: getId(),
@@ -209,8 +255,6 @@ const drawings = [
 ];
 
 //TODO add new favicon
-//TODO mimic this: desktop/mønster
 //TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
 //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
 //TODO demonstrate that curved triangles roll as smooth as circles.
-export default drawings;
