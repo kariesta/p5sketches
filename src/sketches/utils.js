@@ -40,3 +40,11 @@ export const drawLine = (p5,pointArray) => {
         });
     }
 };
+
+export const inputField = (p5,canvasParentRef,value,bx,by,size) => {
+    let field = p5.createInput(value);
+    field.size(size);
+    const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
+    field.position(buttonBaseX+bx, buttonBaseY+by);
+    return field;
+};

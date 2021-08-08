@@ -1,6 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions, drawLine} from "./utils";
+import {calulateDimentions, drawLine, inputField} from "./utils";
 
 //TODO ved oppdatering legg tidligere linjer i en ny liste, som fader 33% ved hver nye liste i bakgrunnen.
 export default function spirograph(){
@@ -40,14 +40,8 @@ export default function spirograph(){
         //regn ut coordinater, width,height
 
         //input
-        inputTiny = p5.createInput(tinyRad);
-        inputShort = p5.createInput(shortRad);
-        inputTiny.size(30);
-        inputShort.size(30);
-
-        const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
-        inputTiny.position(buttonBaseX+20, buttonBaseY+65);
-        inputShort.position(buttonBaseX+20, buttonBaseY+95);
+        inputTiny = inputField(p5,canvasParentRef,tinyRad,20,65,30);
+        inputShort = inputField(p5,canvasParentRef,shortRad,20,95,30);
 
         resetVectors(p5);
         centerV = p5.createVector(wWidth/2,wHeight/2);

@@ -1,6 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "./utils.js";
+import {inputField} from "./utils";
 
 //TODO correct lines for a to b and b to a.
 export default function twisty(){
@@ -31,19 +32,14 @@ export default function twisty(){
         p5.angleMode(p5.DEGREES); // Change the mode to DEGREES
         resetDots(p5);
 
-        inputD = p5.createInput(numOfDots);
-        inputC = p5.createInput(circleR);
-        inputD.size(30);
-        inputC.size(30);
+        inputD = inputField(p5,canvasParentRef,numOfDots,60,65,30);
+        inputC = inputField(p5,canvasParentRef,circleR,60,95,30);
+
         p5.fill(20);
         p5.stroke(20);
         p5.textSize(12);
         p5.text("dots",10, 65);
         p5.text("radius",10, 95);
-
-        const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
-        inputD.position(buttonBaseX+60, buttonBaseY+65);
-        inputC.position(buttonBaseX+60, buttonBaseY+95);
     };
 
     const notInitialiced = () => {

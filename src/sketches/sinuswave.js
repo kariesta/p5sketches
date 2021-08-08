@@ -1,6 +1,6 @@
 import React from 'react';
 import Sketch from "react-p5";
-import {calulateDimentions, drawLine} from "./utils";
+import {calulateDimentions, drawLine, inputField} from "./utils";
 
 export default function sinuswave(){
     let degrees = 0;
@@ -17,10 +17,7 @@ export default function sinuswave(){
         p5.angleMode(p5.DEGREES);
         //p5.frameRate(1);
         center = p5.createVector(wWidth*5/6,wHeight/6);
-        inputDegrees = p5.createInput(degreeInc);
-        inputDegrees.size(30);
-        const {x: buttonBaseX, y: buttonBaseY} = canvasParentRef.getBoundingClientRect();
-        inputDegrees.position(buttonBaseX+60, buttonBaseY+65);
+        inputDegrees = inputField(p5, canvasParentRef, degreeInc, 60, 65, 30);
     };
 
     const draw = p5 => {
