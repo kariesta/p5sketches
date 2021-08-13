@@ -5,13 +5,17 @@ import {calulateDimentions} from "./utils";
 export default function glitchy(){
     const [wWidth,wHeight] = calulateDimentions(window);
     const text = 'Glitchy';
-    const offset = 4;
+    const offset = 3;
 
     const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef)
+        p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
+        p5.blendMode(p5.ADD);
     };
 
     const draw = p5 => {
+        p5.erase();
+        p5.rect(0,0,wWidth,wHeight);
+        p5.noErase();
         p5.background(10,10,10);
         p5.noStroke();
         p5.textSize(90);

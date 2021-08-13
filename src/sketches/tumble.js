@@ -59,13 +59,9 @@ export default function tumble(){
         }
 
         p5.beginShape();
-        p5.vertex(p5.random(-40, 0)*scale, p5.random(-40, 0)*scale,);
-        p5.vertex(p5.random(-40, 5)*scale, p5.random(40,60)*scale);
-        p5.vertex(p5.random(50, 10)*scale, p5.random(40,60)*scale);
-        p5.vertex(p5.random(60, 10)*scale, p5.random(-40, 0)*scale);
-        p5.vertex(p5.random(50, 40)*scale, p5.random(-40, 0)*scale);
-        p5.vertex(p5.random(60, 10)*scale, p5.random(-20, 0)*scale);
-        p5.vertex(p5.random(60, 10)*scale, p5.random(-5, 0)*scale);
+        for (let i = 0; i<7; i++){
+            p5.vertex(p5.random(60, -60)*scale, p5.random(60, -60)*scale);
+        }
         p5.endShape(p5.CLOSE);
     };
 

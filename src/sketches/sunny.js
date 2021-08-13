@@ -2,6 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions, frame} from "./utils";
 
+//TODO adjust for mobile screen
 export default function sunny(){
     const [wWidth,wHeight] = calulateDimentions(window);
     const paddingToFrame = 30;

@@ -2,6 +2,7 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "./utils";
 
+//TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
 export default function falling(){
     const [wWidth,wHeight] = calulateDimentions(window);
     let moves = 0;

@@ -10,6 +10,7 @@ export default function twisty(){
     let dotR = 20, circleR = 100, numOfDots = 12;
     let lastDot,startDot,endDot,dotDiff,locked, animate;
     let inputD, inputC;
+    let color1, color2;
     class Dot {
         constructor(i,x,y){
             this.nr = i;
@@ -31,6 +32,9 @@ export default function twisty(){
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
         p5.angleMode(p5.DEGREES); // Change the mode to DEGREES
         resetDots(p5);
+
+        color1 = p5.color(245,124,158);
+        color2 = p5.color(255,222,90);
 
         inputD = inputField(p5,canvasParentRef,numOfDots,60,65,30);
         inputC = inputField(p5,canvasParentRef,circleR,60,95,30);
@@ -58,23 +62,22 @@ export default function twisty(){
         p5.noStroke();
         for (const d of dots){
             //center  = height/2, cos((i/12)*360)*200 = x
-            p5.fill(220+(d.nr*4),200+(d.nr*2),200-(d.nr*10));
+            p5.fill(p5.lerpColor(color1,color2,d.nr/numOfDots));
             p5.ellipse(d.x,d.y,dotR,dotR);
         }
         for (const l of lines){
             p5.strokeWeight(dotR);
-            p5.stroke(220+(l.nr*4),200+(l.nr*2),200-(l.nr*10));
+            p5.stroke(p5.lerpColor(color1,color2,l.nr/numOfDots));
             p5.line(l.x1,l.y1,l.x2,l.y2)
         }
         if (locked) {
             let d = dots[startDot];
             p5.strokeWeight(dotR);
-            p5.stroke(220+(d.nr*4),200+(d.nr*2),200-(d.nr*10));
+            p5.stroke(p5.lerpColor(color1,color2,d.nr/numOfDots));
             p5.line(p5.mouseX,p5.mouseY,d.x,d.y);
         }
         if (animate){
             let nextDot = (endDot+dotDiff)%numOfDots;
-            ////console.log("yo"+nextDot+",start:"+startDot+",end:"+endDot);
             lines.push(new Line(endDot,dots[endDot].x,dots[endDot].y,dots[nextDot].x,dots[nextDot].y));
             endDot = (endDot+1)%numOfDots;
             if (startDot === endDot){
@@ -97,7 +100,6 @@ export default function twisty(){
             endDot = lastDot;
             animate = true;
             dotDiff = Math.abs((startDot-endDot));//(endDot-startDot)%12;
-            //console.log(endDot+","+startDot+","+dotDiff);
         }
     };
 

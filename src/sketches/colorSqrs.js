@@ -1,6 +1,7 @@
 import React from 'react';
 import Sketch from "react-p5";
 
+//TODO add game of life
 export default function colorSqrs(){
     const wWidth = 400, wHeight = 400;
     let corners = [[0,0]];

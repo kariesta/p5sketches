@@ -2,6 +2,8 @@ import React from 'react';
 import Sketch from "react-p5";
 import {calulateDimentions} from "./utils";
 
+//TODO add arrows for sorting
+//TODO add other sortings like "deshuffle"
 export default function sortyBoy(){
     const [wWidth,wHeight] = calulateDimentions(window);
     const positionStyle = 'fixed';

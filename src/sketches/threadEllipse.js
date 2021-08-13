@@ -15,6 +15,8 @@ export default function threadEllipse(){
         //console.log(dist);
     };
 
+    //TODO for hver mousePosisjon, del opp distanesn fra mouse til center og gå nedover hakk for hakk frem til summen av de to sidene er lik AB*2
+    //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
     const draw = p5 => {
         p5.background(231, 70, 69);
         //p5.background(251, 119, 86);
