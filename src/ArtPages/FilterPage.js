@@ -25,7 +25,7 @@ function FilterPage() {
         <div className={"FilteredList"}>
             {filteredDrawings.map(draw => {
                 return <a href={".#/post/"+(draw.id)} key={draw.id}>
-                    <DescriptionCard description={draw.description}/>
+                    <DescriptionCard description={draw.description} categories={draw.categories}/>
                 </a>
             })}
         </div>

@@ -12,7 +12,7 @@ function SketchFrame(props) {
         </div>
         <div className={"SketchWall"}>
             {props.children}
-            <DescriptionCard description={props.description}/>
+            <DescriptionCard description={props.drawing.description} categories={props.drawing.categories}/>
         </div>
     </div>;
 }

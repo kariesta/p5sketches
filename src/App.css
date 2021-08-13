@@ -50,6 +50,19 @@ html {
   box-shadow: 10px 10px 1px #12181f;
 }
 
+.descriptionCard h1{
+  font-size: medium;
+  font-weight: normal;
+  margin-bottom: 0.4rem;
+}
+
+.descriptionCard p{
+  font-size: medium;
+  font-style: italic;
+  font-weight: lighter;
+  margin-top: 0;
+}
+
 .SketchNav{
   margin: 2rem 1rem;
   display: flex;

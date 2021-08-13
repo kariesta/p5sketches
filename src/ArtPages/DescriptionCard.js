@@ -4,7 +4,8 @@ import React from 'react';
 function DescriptionCard(props) {
     return (
         <div className={"descriptionCard"}>
-            <p>{props.description}</p>
+            <h1>{props.description}</h1>
+            <p>{props.categories.join(', ')}</p>
         </div>);
 }
 

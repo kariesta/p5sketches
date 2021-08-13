@@ -31,7 +31,7 @@ function ArtPage() {
     let sketchy = drawing.sketch();
 
     return <div className={"ArtPage"}>
-        <SketchFrame nextId={nextId} prevId={prevId} description={drawing.description} drawId={drawing.id}>
+        <SketchFrame nextId={nextId} prevId={prevId} drawing={drawing}>
             {sketchy}
         </SketchFrame>
     </div>;
