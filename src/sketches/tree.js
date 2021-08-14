@@ -20,7 +20,6 @@ export default function tree(){
         for(let i = 0; i<starting; i++) {
             activepoints.push([p5.random(wWidth/3,wWidth*2/3),wHeight])
         }
-        console.log(activepoints);
     };
 
     const draw = p5 => {
@@ -100,7 +99,6 @@ export default function tree(){
         let grassColor;
         for (let x=0; x < wWidth; x++) {
             let noiseVal = p5.noise((p5.mouseX+x)*noiseScale+offset, p5.mouseY*noiseScale);
-            console.log(noiseVal);
             grassColor = p5.lerpColor(darkGreen,leafGreen,noiseVal);
             p5.stroke(grassColor);
             p5.line(x, wHeight-noiseVal*grassHeight, x, wHeight);

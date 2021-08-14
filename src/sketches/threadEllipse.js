@@ -5,18 +5,22 @@ import {calulateDimentions} from "./utils";
 export default function threadEllipse(){
     const [wWidth,wHeight] = calulateDimentions(window);
     //const dist = (wWidth/3)*1.2;
-    let c1,c2;
+    let center,c1,c2,eDist;
+    const margin = 0;
+    let mouseV,thirdPoint;
+    let points = [];
 
 
     const setup = (p5, canvasParentRef) => {
         p5.createCanvas(wWidth, wHeight).parent(canvasParentRef);
+        center = p5.createVector(wWidth/2,wHeight/2);
         c1 = p5.createVector(wWidth/3,wHeight/2);
         c2 = p5.createVector(wWidth*2/3,wHeight/2);
-        //console.log(dist);
+        eDist = c1.dist(c2)*1.3;
+        mouseV = p5.createVector(p5.mouseX,p5.mouseY);
+        thirdPoint= mouseV;
     };
 
-    //TODO for hver mousePosisjon, del opp distanesn fra mouse til center og gå nedover hakk for hakk frem til summen av de to sidene er lik AB*2
-    //TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
     const draw = p5 => {
         p5.background(231, 70, 69);
         //p5.background(251, 119, 86);
@@ -29,15 +33,40 @@ export default function threadEllipse(){
         p5.stroke(251, 119, 86, 200);
         p5.line(wWidth/2,wHeight/2,p5.mouseX,p5.mouseY);
 
-        //define
-        let mouseV = p5.createVector(p5.mouseX,p5.mouseY);
-        let dist1 =  c1.dist(mouseV);
-        let dist2 =  c2.dist(mouseV);
-        let rel = dist1+dist2;
-        p5.text(rel,20,20);
+        if(p5.mouseIsPressed){
+            //define
+            mouseV = p5.createVector(p5.mouseX,p5.mouseY);
+            thirdPoint= mouseV;
+            let mouseDir = mouseV.sub(center);//p5.createVector((wWidth/2),(wHeight/2)-p5.mouseY);
+            let dist1 =  c1.dist(mouseV);
+            let dist2 =  c2.dist(mouseV);
+            let rel = dist1+dist2;
+            p5.text(rel,20,20);
 
-        //
+            while (rel > eDist+margin){
+                mouseDir = mouseDir.mult(0.95);
+                thirdPoint = center.copy().add(mouseDir);
+                dist1 =  c1.dist(thirdPoint);
+                dist2 =  c2.dist(thirdPoint);
+                rel = dist1+dist2;
+            }
 
+            while (rel < eDist-margin){
+                mouseDir = mouseDir.mult(1.1);
+                thirdPoint = center.copy().add(mouseDir);
+                dist1 =  c1.dist(thirdPoint);
+                dist2 =  c2.dist(thirdPoint);
+                rel = dist1+dist2;
+            }
+            points.push(thirdPoint);
+        }
+        p5.stroke(253, 250, 102);
+        p5.line(c1.x,c1.y,thirdPoint.x,thirdPoint.y);
+        p5.line(c2.x,c2.y,thirdPoint.x,thirdPoint.y);
+
+        points.forEach(p => {
+            p5.point(p.x,p.y);
+        });
 
         p5.noStroke();
         p5.fill(253, 250, 102);

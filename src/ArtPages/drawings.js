@@ -28,6 +28,12 @@ import jerryFolk from "../sketches/jerryFolk";
 import wavey from "../sketches/wavey";
 import water from "../sketches/water";
 import unitCircle from "../sketches/unitCircle";
+import osaka from "../sketches/Osaka";
+import sqOnSq from "../sketches/sqOnsq";
+import unfinished1 from "../sketches/unfinnished1";
+import unfinished2 from "../sketches/unfinnished2";
+import unfinished3 from "../sketches/unfinnished3";
+import honningbarna from "../sketches/honningbarna";
 
 let id = 0;
 const getId = () => {
@@ -37,7 +43,7 @@ const getId = () => {
 };
 
 export const categories = [
-    "interaktivt","inputfelt","enkelt","album","noise/random"
+    "interaktivt","inputfelt","enkelt","album","noise/random","unfinished"
 ];
 
 //TODO lag et filter med tags, interaktivt, inputfelt, enkelt, album, noise/random
@@ -136,7 +142,7 @@ export const drawings = [
         id: getId(),
         description: 'mønstermonster',
         sketch: moenster,
-        categories: [categories[2]]
+        categories: [categories[2],categories[5]]
     },
     {
         id: getId(),
@@ -146,9 +152,9 @@ export const drawings = [
     },
     {
         id: getId(),
-        description: 'glitchy',
+        description: 'TODO: glitchy',
         sketch: glitchy,
-        categories: [ categories[2]]
+        categories: [ categories[2],categories[5]]
     },
     {
         id: getId(),
@@ -166,11 +172,11 @@ export const drawings = [
         id: getId(),
         description: 'falling',
         sketch: falling,
-        categories: [categories[0]]
+        categories: [categories[0],categories[5]]
     },
     {
         id: getId(),
-        description: 'Sigma - find me, but colour updates.',
+        description: 'Sigma - find me, but at different levels of detail.',
         sketch: findMe,
         categories: [categories[2], categories[3]]
     },
@@ -208,13 +214,13 @@ export const drawings = [
         id: getId(),
         description: 'TODO: jerry folk - futura, but moving into place',
         sketch: jerryFolk,
-        categories: [categories[0], categories[3]]
+        categories: [categories[0], categories[3], categories[5]]
     },
     {
         id: getId(),
         description: 'TODO: water',
         sketch: water,
-        categories: [categories[4]]
+        categories: [categories[4], categories[5]]
     },
     {
         id: getId(),
@@ -222,32 +228,43 @@ export const drawings = [
         sketch: unitCircle,
         categories: [categories[0]]
     },
-    /*{
+    {
+        id: getId(),
+        description: 'TODO: oaska loop line, but colors translating from orange/blue to pink/green',
+        sketch: osaka,
+        categories: [categories[3], categories[5]]
+    },
+    {
+        id: getId(),
+        description: 'TODO: squares on squares',
+        sketch: sqOnSq,
+        categories: [categories[0], categories[2], categories[5]]
+    },
+    {
         id: getId(),
         description: 'TODO: a rope, move up and down',
-        sketch: simple
+        sketch: unfinished1,
+        categories: [ categories[5]]
     },
     {
         id: getId(),
         description: 'TODO: blobs, either rows or floating around',
-        sketch: simple
+        sketch: unfinished2,
+        categories: [ categories[5]]
     },
     {
         id: getId(),
         description: 'TODO: mytype, but jumping off it',
-        sketch: simple
+        sketch: unfinished3,
+        categories: [ categories[5]]
     },
     {
         id: getId(),
-        description: 'TODO: olaska loop line, but colors translating from orange/blue to pink/green',
-        sketch: simple
+        description: 'honningbarna opp de nye blanke, en prikk om gangen uten bakgrunn så tekst',
+        sketch: honningbarna,
+        categories: [ categories[2],categories[4]]
     },
-    {
-        id: getId(),
-        description: 'TODO: honningbarna opp de nye blanke, en prikk om gangen uten bakgrunn så tekst',
-        sketch: simple
-    },
-    {
+    /*{
         id: getId(),
         description: 'TODO:',
         sketch: simple
@@ -255,6 +272,4 @@ export const drawings = [
 ];
 
 //TODO add new favicon
-//TODO ball som faller nedover, ymse figurer går oppover, ball triller av.
-//TODO tegne elipse ved å ha en "tråd" mellom to punkter og nærmeste punktet mot musetasten. tegne punkter når en holder inne musa
 //TODO demonstrate that curved triangles roll as smooth as circles.
